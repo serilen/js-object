@@ -6,6 +6,10 @@
 Создать простой работающий “Онлайн тест”. Вопросы и ответы хранятся в двумерном массиве. Результат выводим на страницу: You got 1 question(s) right.
 ----------------------------------------------------------------------------------------------------------------------------------*/
 
+/*calc.onclick = function() {
+  var myform = this.form;
+  myform.result.value = +myform.myname.value + +myform.authorGOAL.value;
+}*/
 
 
 
@@ -33,11 +37,7 @@ var salaries = {
 };
 
 function isEmpty(obj) {
-	for (let key in obj) {
-    // если тело цикла начнет выполняться - значит в объекте есть свойства
-    return false;
-  }
-  return true;
+    return Object.keys(obj).length === 0;
 }
 
 function sumValueObject(obj) {
@@ -48,13 +48,8 @@ function sumValueObject(obj) {
   return sum;
 }
 
-if (isEmpty(salaries) == !true) {
-	console.log(sumValueObject(salaries));
-} else {
-	console.log("0");
-}*/
-
-
+!isEmpty(salaries) ? console.log(sumValueObject(salaries)) : console.log("0");
+*/
 
 
 
@@ -82,11 +77,7 @@ var salaries = {
 };
 
 function isEmpty(obj) {
-	for (let key in obj) {
-    // если тело цикла начнет выполняться - значит в объекте есть свойства
-    return false;
-  }
-  return true;
+    return Object.keys(obj).length === 0;
 }
 
 function maxValueObject(obj) {
@@ -101,10 +92,7 @@ for (let key in obj) {
 return(name + " " + max);
 }
 
-if (isEmpty(salaries) == !true) {
-	console.log(maxValueObject(salaries));
-} else {
-	console.log("Нет сотрудников");
+!isEmpty(salaries) ? console.log(maxValueObject(salaries)) : console.log("Нет сотрудников");
 }*/
 
 /*ДЗ:
@@ -122,22 +110,34 @@ console.log(map(square, arr)); // [1, 4, 9]
 console.log(arr); // [1, 2, 3]
 //----------------------------------------------------------------------------------------------------------------------------------*/
 
-/*function map(fn, array) {
+function map(fn, array) {
 	let newArray = [];
 	for(let i = 0; i < array.length; i++) {
-		newArray.push(square(array[i]));
+		newArray.push(fn(array[i]));
 	}
 	return newArray;
 }
 
+
 function square(x) {
+	let fn = square;
 	return x * x;
 }
 
+function cube(x) {
+	let fn = cube;
+	return x * x * x;
+}
+
 let array = [2, 3, 4, 2, 1, 3];
+
+console.log(map(cube, array));
 console.log(map(square, array));
 console.log(array);
-*/
+for (let key in array) {
+	console.log(name);
+}
+
 
 })();
 
